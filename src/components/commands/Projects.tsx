@@ -322,3 +322,5 @@ export default Projects;
   background-color: #64ffda;
 }
 */
+
+// add new thumbnail images to the projects and experience arrays as needed
