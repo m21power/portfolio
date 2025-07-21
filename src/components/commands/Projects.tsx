@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { termContext } from "../Terminal";
+
 import {
   ProjectContainer,
   ProjectDesc,
@@ -65,6 +66,10 @@ const CloseButton = styled.button`
     color: #64ffda;
   }
 `;
+const FaGithubIcon = FaGithub as unknown as React.FC;
+const FaServerIcon = FaServer as unknown as React.FC;
+const FaMobileIcon = FaMobile as unknown as React.FC;
+const FaCarIcon = FaCar as unknown as React.FC;
 
 const Projects: React.FC = () => {
   const { arg, history, rerender } = useContext(termContext);
@@ -175,7 +180,7 @@ const Projects: React.FC = () => {
               {`${proj.id}. ${proj.title}`}
               {proj.url && (
                 <a href={proj.url} target="_blank" rel="noopener noreferrer">
-                  <FaGithub />
+                  <FaGithubIcon />
                 </a>
               )}
             </ProjectTitle>
@@ -202,7 +207,7 @@ const experience = [
     id: 1,
     company: "Africa To Silicon Valley (A2SV)",
     role: "Backend Developer - Stocket",
-    icon: <FaServer />,
+    icon: <FaServerIcon />,
     details: [
       "Developed scalable backend services to handle real-time stock market data",
       "Led improvements to backend architecture including middleware integration and error handling optimization",
@@ -216,7 +221,7 @@ const experience = [
     id: 2,
     company: "Africa To Silicon Valley (A2SV)",
     role: "Mobile App Development Intern",
-    icon: <FaMobile />,
+    icon: <FaMobileIcon />,
     details: [
       "Developed mobile apps using Flutter and Dart following TDD principles",
       "Collaborated on app design, testing, and deployment",
@@ -230,7 +235,7 @@ const experience = [
     id: 3,
     company: "Golden Ride",
     role: "Mobile App Developer",
-    icon: <FaCar />,
+    icon: <FaCarIcon />,
     details: [
       "Developed driver-side app with Flutter using Clean Architecture and BLoC",
       "Integrated real-time location updates using Socket.IO and Google Maps API",
